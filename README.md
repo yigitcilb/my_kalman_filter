@@ -1,3 +1,7 @@
+This is a kalman filter to estimate 1D location using acceleration data 
+
+
+
 ```math
 v = \hat{v} + \text{imu\_data} \cdot dt
 ```
