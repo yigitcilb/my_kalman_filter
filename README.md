@@ -24,7 +24,7 @@ z & 0 & 0
 P_{k}^- = F\cdot P_{k-1}\cdot F^T + Q
 ```
 ```math
-K_{k} = P_{k}^- \cdot H^T \cdot (H\cdot P_{k}^- \cdot H^T +R)^-1
+K_{k} = P_{k}^- \cdot H^T \cdot (H\cdot P_{k}^- \cdot H^T +R)^{-1}
 ```
 ```math
 P_{k} = (I - K_{k} \cdot H) \cdot P_{k}^-
