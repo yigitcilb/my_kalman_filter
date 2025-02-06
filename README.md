@@ -2,23 +2,9 @@ This is a kalman filter to estimate 1D location using acceleration data
 
 
 
+
 ```math
-v = \hat{v} + \text{imu\_data} \cdot dt
-```
-```math
-init = \hat{z}[0] + v \cdot dt
-```
-```math
-z = \hat{z}[0] + v\cdot dt
-```
-```math
-\mathbf{z} =
-\begin{bmatrix} 
-z & 0 & 0 
-\end{bmatrix}^T
-```
-```math
-\hat{x}^- = F\cdot \hat{x}
+\hat{x}^- = F\cdot \hat{x} + B\cdot a 
 ```
 ```math
 P_{k}^- = F\cdot P_{k-1}\cdot F^T + Q
@@ -35,9 +21,7 @@ P_{k} = (I - K_{k} \cdot H) \cdot P_{k}^-
 ```math
 \hat{z} = H \cdot \hat{x}
 ```
-```math
-\hat{v} = (\hat{z}[0] - init) / dt
-```
+
 ```math
 F = \begin{bmatrix}
 1 & \Delta t & 0 \\
@@ -46,7 +30,12 @@ F = \begin{bmatrix}
 \end{bmatrix}
 ```
 ```math
+B = \begin{bmatrix}
+{{\Delta t}^2}/2 & \Delta t & 1
+\end{bmatrix}
+```
+```math
 H = \begin{bmatrix}
-1 & 0 & 0
+0 & 0 & 1
 \end{bmatrix}
 ```
