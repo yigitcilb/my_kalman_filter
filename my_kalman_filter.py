@@ -31,4 +31,4 @@ class KalmanFilter:
         self.x_hat = self.x_hat_minus + np.dot(self.K, self.v_k)  
         self.P = np.dot(np.eye(3) - np.dot(self.K, self.H), self.P_minus)  
         self.z_hat = np.dot(self.H, self.x_hat)  
-        return np.dot(self.fin, self.x_hat)
+        return np.dot(self.fin, self.x_hat)[0]
