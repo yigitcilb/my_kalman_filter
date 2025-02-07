@@ -24,14 +24,14 @@ P_{k} = (I - K_{k} \cdot H) \cdot P_{k}^-
 ```
 ```math
 F = \begin{bmatrix}
-1 & \Delta t & 0 \\
-0 & 1 & \Delta t \\
-0 & 0 & 1
+1 & \Delta t \\
+0 & 1 
 \end{bmatrix}
 ```
 
 ```math
 H = \begin{bmatrix}
-0 & 0 & 1
+1 & 0 \\
+0 & 1
 \end{bmatrix}
 ```
